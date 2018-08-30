@@ -1,0 +1,48 @@
+{
+  "name": "http-parser-native",
+  "version": "1.0.0",
+  "description": "",
+  "main": "lib/index.js",
+  "scripts": {
+    "start": "npm run test:watch",
+    "test": "NODE_ENV=test jest",
+    "test:watch": "npm run test -- --watch",
+    "test:coverage": "npm run test -- --coverage",
+    "format": "prettier --write 'src/**/*.js'",
+    "format:check": "prettier --list-different 'src/**/*.js'",
+    "lint": "eslint src/ test/",
+    "compile": "rimraf lib/*; NODE_ENV=production babel src/ -d lib/ -s",
+    "compile:watch": "npm run compile -- -w",
+    "prepublish": "npm run compile"
+  },
+  "engines": {
+    "node": ">=4"
+  },
+  "author": "Olivier Louvignes <olivier@mgcrea.io>",
+  "repository": "github:mgcrea/node-http-parser-native",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/cli": "^7.0.0",
+    "@babel/core": "^7.0.0",
+    "@babel/plugin-proposal-class-properties": "7.0.0",
+    "@babel/plugin-proposal-object-rest-spread": "7.0.0",
+    "@babel/plugin-syntax-dynamic-import": "^7.0.0",
+    "@babel/preset-env": "7.0.0",
+    "babel-core": "^7.0.0-0",
+    "babel-eslint": "^9.0.0",
+    "babel-jest": "^23.4.2",
+    "debug-utils": "^0.3.2",
+    "eslint": "^5.4.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-config-prettier": "^3.0.1",
+    "eslint-plugin-import": "^2.14.0",
+    "expect": "^23.5.0",
+    "jest": "^23.5.0",
+    "prettier": "^1.14.2",
+    "regenerator-runtime": "^0.12.1",
+    "rimraf": "^2.6.2"
+  },
+  "jest": {
+    "testEnvironment": "node"
+  }
+}
